@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+
+    <!-- js links -->
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+
+    <title>Profile</title>
+    <style>
+      @media print{
+        .no-print{
+          display:none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar no-print navbar-expand-md bg-light shadow-lg fixed-top navbar-light"
+    >
+      <div class="container-fluid">
+        <img src="../img/yadgar.png" width="100" />
+        <a href="#" class="navbar-brand mx-4 fw-bolder"> HMS </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#myMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="myMenu">
+          <ul class="navbar-nav w-100 justify-content-end">
+            <div class="input-group w-50 mx-3">
+              <input
+                type="search"
+                class="form-control search-input"
+                placeholder="Search by Name, Email"
+              />
+              <span class="input-group-text text-success fw-bold">Search</span>
+            </div>
+            <button class="btn  logout-btn px-4 text-white fw-bold">
+              <img class="rounded-circle" src="../img/logout.png" width="35" />
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <!-- nav pan -->
+          <ul class="nav no-print nav-tabs">
+            <li class="nav-item">
+              <a
+                href="#booking "
+                class="nav-link  active tab-btn"
+                data-bs-toggle="tab"
+                data-bs-target="#booking"
+              >
+                Booking
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#inHouse"
+                class="nav-link  tab-btn"
+                data-bs-toggle="tab"
+                data-bs-target="#inHouse"
+              >
+                In House
+              </a>
+            </li>
+            <li class="nav-item">
+                <a
+                  href="#archive "
+                  class="nav-link  tab-btn"
+                  data-bs-toggle="tab"
+                  data-bs-target="#archive"
+                >
+                  Archieve
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#cahair"
+                  class="nav-link  cashair-tab "
+                  data-bs-toggle="tab"
+                  data-bs-target="#cashair"
+                >
+                 Cashair
+                </a>
+              </li>
+          </ul>
+
+          <!-- tab pan -->
+          <div class="tab-content">
+            <div class="tab-pane active container-fluid search-pane  mt-3" id="booking">
+             <div class="row mt-5 mb-3 no-print">
+                <div class="col-md-4 text-center">
+                    <button data-bs-toggle="modal" data-bs-target="#regModal" class="btn   action-btn px-4 text-white fw-bold b-register-btn">Register</button></div>
+                <div class="col-md-4 text-center"><button class="btn print-btn action-btn px-5 text-white fw-bold">Print</button></div>
+                <div class="col-md-4 text-center"><button class="btn total-btn action-btn text-white fw-bold">Total Booking</button></div>
+             </div>
+            <div class="table-responsive">
+                <h2>All booking data</h2>
+                <table class="table  table-striped text-center">
+                    <thead>
+                        <tr class="table table-warning">
+                            <th class="text-wrap no-print">Sr</th>
+                            <th class="text-nowrap">Location</th>
+                            <th class="text-nowrap">Room No</th>
+                            <th class="text-nowrap">Full Name</th>
+                            <th class="text-nowrap">Check In</th>
+                            <th class="text-nowrap">Check Out</th>
+                            <th class="text-nowrap">Total Person</th>
+                            <th class="text-nowrap">Price</th>
+                            <th class="text-nowrap">Mobile</th>
+                            <th class="text-nowrap">Notice</th>
+                            <th class="no-print">Created At</th>
+                            <th class="no-print">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="booking-list">
+                     
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+              <div class="row py-5 show-booking-rooms">
+                
+              </div>
+           
+            </div>
+            <div class="tab-pane container-fluid search-pane  mt-3" id="inHouse">
+              <div class="row mt-5 mb-3">
+                 <div class="col-md-4 text-center">
+                     <button data-bs-toggle="modal" data-bs-target="#inHouse-modal" class="btn no-print  action-btn px-4 text-white fw-bold in-house-reg-btn">Register</button></div>
+                 <div class="col-md-4 text-center no-print"><button class="btn print-btn action-btn px-5 text-white fw-bold">Print</button></div>
+                 <div class="col-md-4 text-center no-print"><button class="btn total-btn action-btn text-white fw-bold">Total Inhouse</button></div>
+              </div>
+             <div class="table-responsive">
+                 <h2>All In House data</h2>
+                 <table class="table  table-striped text-center">
+                     <thead>
+                         <tr class="table table-warning">
+                             <th class="text-nowrap no-print">Sr</th>
+                             <th class="text-nowrap">Location</th>
+                             <th class="text-nowrap">Room No</th>
+                             <th class="text-nowrap">Full Name</th>
+                             <th class="text-nowrap">Check In</th>
+                             <th class="text-nowrap">Check Out</th>
+                             <th class="text-nowrap">Total Person</th>
+                             <th class="text-nowrap">Price</th>
+                             <th class="text-nowrap">Mobile</th>
+                             <th class="text-nowrap">Notice</th>
+                             <th class="text-nowrap no-print">Created At</th>
+                             <th class="text-nowrap no-print">Action</th>
+                         </tr>
+                     </thead>
+                     <tbody class="inHouse-list">
+                       <tr>
+                           <td>1</td>
+                           <td>Philadelphia</td>
+                           <td>45</td>
+                           <td>Ahmad</td>
+                           <td>3/3/2024</td>
+                           <td>4/4/2024</td>
+                           <td>4</td>
+                           <td>$45</td>
+                           <td>99999999</td>
+                           <td>All includes</td>
+                           <td>4/4/2024</td>
+                           <td>
+                               <button class="btn btn-primary text-white p-0 px-1"><i class="fa fa-edit"></i></button>
+                               <button class="btn btn-info text-white p-0 px-1"><i class="fa fa-check"></i></button>
+                               <button class="btn btn-danger text-white p-0 px-1"><i class="fa fa-trash"></i></button>
+                           </td>
+                       </tr>
+                     </tbody>
+                 </table>
+             </div>
+             <div class="row py-5 show-inhouse-rooms">
+              <div class="card col-md-2 px-0 text-center">
+                <div class="card-header  bg-dark text-white fw-bold">
+                  15
+                </div>
+                
+              </div>
+            </div>
+            </div>
+            <div class="tab-pane container-fluid search-pane   mt-3" id="archive">
+              <div class="row mt-5 mb-3 justify-content-start">
+                 <div class="col-md-6 text-left">
+                  <button class="btn no-print btn-sm print-btn action-btn px-5 text-white fw-bold">Print</button>
+                  <button class="btn no-print total-btn btn-sm action-btn text-white fw-bold">Total Archieve</button>
+                </div>
+              </div>
+            <div>
+                 <h2>All Archieve Data</h2>
+                 <table class="table table-light text-center">
+                     <thead>
+                         <tr class="table table-warning">
+                             <th class="text-nowrap no-print">Sr</th>
+                             <th class="text-nowrap">Location</th>
+                             <th class="text-nowrap">Room No</th>
+                             <th class="text-nowrap">Full Name</th>
+                             <th class="text-nowrap">Check In</th>
+                             <th class="text-nowrap">Check Out</th>
+                             <th class="text-nowrap">Total Person</th>
+                             <th class="text-nowrap">Price</th>
+                             <th class="text-nowrap">Mobile</th>
+                             <th class="text-nowrap">Notice</th>
+                             <th class="text-nowrap no-print">Created At</th>
+                             <th class="text-nowrap no-print">Action</th>
+                         </tr>
+                     </thead>
+                     <tbody class="archive-list">
+                     
+                     
+                     </tbody>
+                 </table>
+             </div>
+            </div>
+            <div class="tab-pane container-fluid cashier-tab-pan  mt-3" id="cashair">
+              <div>
+                 <h2>All Archieve Data</h2>
+                 <table class="table table-light text-center">
+                     <thead>
+                         <tr class="table table-warning">
+                            <th class="text-nowrap">Sr</th>
+                            <th class="text-nowrap ">Room No</th>
+                            <th class="text-nowrap ">Cashair</th>
+                            <th class="text-nowrap ">Date/Time</th>
+                            <th class="text-nowrap ">Amount</th>
+                             
+                         </tr>
+                     </thead>
+                     <tbody class="cashair-list">
+                      </tbody>
+                 </table>
+                 <div class="d-flex justify-content-between mt-5 align-times-center">
+                  <h3 >Total</h3>
+                  <h3 style="margin-right: 80px" class="total"></h3>
+                 </div>
+                 <div class="row mt-5 mb-3 justify-content-between">
+                  <div class="col-md-3 text-center"><button data-bs-toggle="modal" data-bs-target="#cashair-modal" class="btn no-print  cash-btn action-btn px-5 text-white fw-bold" >Add Cash</button></div>
+                  <div class="col-md-3 text-center"><button class="btn  no-print close-cashier-btn action-btn text-white fw-bold">Close Cashair</button></div>
+                  <div class="col-md-3 text-center"><button class="btn  no-print  action-btn text-white fw-bold" data-bs-toggle="modal" data-bs-target="#cashier-archive-modal" onclick=" showCashArchFunc()">Archieve Cashair</button></div>
+                  <div class="col-md-3 text-center"><button class="btn  no-print print-btn action-btn text-white fw-bold px-5">Print</button></div>
+               </div>
+             </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+
+    <!-- start modal codings-->
+    <div class="modal modal-lg animate__animated animate__zoomIn " id="regModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header  text-bold ">
+                    <h5>Registration form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form class="booking-form">
+                        <div class="row md-3">
+                          
+                        <div class="col-md-6">
+                              <label >Full Name</label>
+                              <input name="fullName" type="text" class="form-control mb-3" placeholder="Full Name">
+                        </div>
+                            
+                        <div class="col-md-6">
+                              <label >Location</label>
+                              <input name="location" type="text" class="form-control mb-3" placeholder="Location"></div>
+                        </div>
+                        <div class="row md-3">
+                            <div class="col-md-6">
+                              <label >Room No</label>
+                              <input name="roomNo" type="text" class="form-control mb-3" placeholder="Room No"></div>
+                            <div class="col-md-6">
+                              <label >Total people</label>
+                              <input name="totalPeople" type="text" class="form-control mb-3" placeholder="Total People"></div>
+                        </div>
+                        <div class="row md-3">
+                            
+                            <div class="col-md-6">
+                                <label >Chek In</label>
+                                <input name="checkIn" type="date" class="form-control mb-3" ></div>
+                           
+                            <div class="col-md-6">
+                                <label >Chek Out</label>
+                                <input name="checkOut" type="date" class="form-control mb-3" ></div>
+                        </div>
+                        <div class="row md-3">
+                            <div class="col-md-6">
+                              <label >Price</label>
+                              <input name="price" type="number" class="form-control mb-3" placeholder="Price"></div>
+                            <div class="col-md-6">
+                              <label >Mobile</label>
+                              <input name="mobile" type="number" class="form-control mb-3" placeholder="Mobile"></div>
+                        </div>
+                        <div class="row md-3">
+                          <label >Notice</label>
+                            <textarea name="notice" class="form-control" placeholder="Notice"></textarea>
+                        </div>
+                        <div class="row ">
+                            <button class="action-btn text-white fw-bolder my-2  m-0 p-2 " style="border-radius:5px; border: none;" type="submit">Register</button>
+                            <button class="btn btn-danger text-white fw-bolder my-2  m-0 p-2 d-none" style="border-radius:5px; border: none;" type="button">Update</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- inhouse modal -->
+    <div class="modal modal-lg animate__animated animate__zoomIn " id="inHouse-modal">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header  text-bold  ">
+                  <h5>Inhouse form</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body p-4">
+                  <form class="inhouse-form">
+                      <div class="row md-3">
+                        
+                      <div class="col-md-6">
+                            <label >Full Name</label>
+                            <input name="fullName" type="text" class="form-control mb-3" placeholder="Full Name">
+                      </div>
+                          
+                      <div class="col-md-6">
+                            <label >Location</label>
+                            <input name="location" type="text" class="form-control mb-3" placeholder="Location"></div>
+                      </div>
+                      <div class="row md-3">
+                          <div class="col-md-6">
+                            <label >Room No</label>
+                            <input name="roomNo" type="text" class="form-control mb-3" placeholder="Room No"></div>
+                          <div class="col-md-6">
+                            <label >Total people</label>
+                            <input name="totalPeople" type="text" class="form-control mb-3" placeholder="Total People"></div>
+                      </div>
+                      <div class="row md-3">
+                          
+                          <div class="col-md-6">
+                              <label >Chek In</label>
+                              <input name="checkIn" type="date" class="form-control mb-3" ></div>
+                         
+                          <div class="col-md-6">
+                              <label >Chek Out</label>
+                              <input name="checkOut" type="date" class="form-control mb-3" ></div>
+                      </div>
+                      <div class="row md-3">
+                          <div class="col-md-6">
+                            <label >Price</label>
+                            <input name="price" type="number" class="form-control mb-3" placeholder="Price"></div>
+                          <div class="col-md-6">
+                            <label >Mobile</label>
+                            <input name="mobile" type="number" class="form-control mb-3" placeholder="Mobile"></div>
+                      </div>
+                      <div class="row md-3">
+                        <label >Notice</label>
+                          <textarea name="notice" class="form-control" placeholder="Notice"></textarea>
+                      </div>
+                      <div class="row ">
+                          <button class="action-btn text-white fw-bolder my-2  m-0 p-2 " style="border-radius:5px; border: none;" type="submit">Register</button>
+                          <button class="btn btn-danger text-white fw-bolder my-2  m-0 p-2 d-none" style="border-radius:5px; border: none;" type="button">Update</button>
+                      </div>
+                  </form>
+
+              </div>
+          </div>
+      </div>
+  </div>
+ <!-- cashair modal -->
+ <div class="modal modal-lg animate__animated animate__zoomIn " id="cashair-modal">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header  text-bold  ">
+              <h5>Cashair form</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-4">
+              <form class="cashier-form">
+                                        
+                  
+                  <div class="row md-3">
+                      <div class="col-md-6">
+                        <label >Room No</label>
+                        <input name="roomNo" type="number" class="form-control mb-3" placeholder="Room No"></div>
+                      <div class="col-md-6">
+                        <label >Amount</label>
+                        <input name="amount" type="number" class="form-control mb-3" placeholder="Amount"></div>
+                  </div>
+                  <div class="row md-3">
+                      <div class="col-md-12">
+                          <label >Cashair</label>
+                          <input  name="cashair" type="text" readonly value="alok" class=" form-control mb-3" >
+                        </div>
+                  </div>
+                 <div class="row ">
+                      <button class="btn btn-sm action-btn text-white fw-bolder my-2  m-0 p-2 " style="border-radius:5px; border: none;" type="submit">Register</button>
+                      <button class="btn btn-danger text-white fw-bolder my-2  m-0 p-2 d-none" style="border-radius:5px; border: none;" type="button">Update</button>
+                  </div>
+              </form>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- cash modal -->
+<div class="modal modal-lg animate__animated animate__zoomIn " id="cashier-archive-modal">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header  text-bold  ">
+              <h5>Cashair Archieve form</h5>
+              <i class="fa fa-print action-btn p-2 mx-4 arch-print-btn" style="border-radius: 5px;"></i>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-4 modal-lg">
+            <div class="table-responsive ">
+              <table class="table table-light text-center">
+                  <thead>
+                      <tr class="table table-warning">
+                          <th class="text-nowrap">Sr</th>
+                          <th class="text-nowrap">Cashier</th>
+                          <th class="text-nowrap">Date/Time</th>
+                          <th class="text-nowrap">Amount</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody class="cashier-arch-list">
+                  </tbody>
+              </table>
+              <div class="d-flex justify-content-between mt-3 align-times-center">
+               <h3 >Total</h3>
+               <h3 style="margin-right: 80px" class="arch-total"></h3>
+              </div>
+              
+
+          </div>
+      </div>
+  </div>
+</div>
+
+    <!-- end modal coding -->
+
+
+
+    <!-- js link -->
+    <script src="./js/profile.js"></script>
+  </body>
+</html>
